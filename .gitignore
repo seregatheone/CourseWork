@@ -84,7 +84,3 @@ buildSrc/build
 .idea/gradle.xml
 .idea/jarRepositories.xml
 .idea/navEditor.xml
-
-# Project exclude paths
-/buildSrc/
-/gradle/
