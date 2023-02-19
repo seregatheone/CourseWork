@@ -1,5 +1,20 @@
 # CourseWork
 Course work for university from test work  
 
-## figma design https://www.figma.com/file/KqZcU5m3GMxAHwgFkvCONz/ECOMMERCE?node-id=2%3A845&t=3zqabxf4QwmoPGtg-0
-## text requirements https://docs.google.com/document/d/1VedkRcsN6yukGO2uWES4RuIM8KMtESZ8p7zD7nGySMs/edit
+- Название веток feature/CW-XXX  
+- Сообщение коммита CW-XXX: Something title (где Something title короткое описание того что в коммите)  
+- Title для MR (Merge request) в BS-XXX: Something title (где Something title короткое описание что сделано для решения фичи)  
+
+## Стек технологий  
+- Dependency Injection: `Dagger2`  
+- UI Framework: `Jetpack Compose`  
+- Network: `Retrofit`  
+- Cache: `SharedPreference`  
+- UI: `Material Design 3` + basic compose instruments  
+- Architecture: `Clean Architecture`  
+- Pattern Presentation: `MVVM`, `MVVM+` (MVVM mixed with MVI)  
+- Builder Project: `Gradle KTS`  
+
+
+#### figma design https://www.figma.com/file/KqZcU5m3GMxAHwgFkvCONz/ECOMMERCE?node-id=2%3A845&t=3zqabxf4QwmoPGtg-0
+#### text requirements https://docs.google.com/document/d/1VedkRcsN6yukGO2uWES4RuIM8KMtESZ8p7zD7nGySMs/edit  
