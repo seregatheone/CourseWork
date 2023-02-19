@@ -1,5 +1,5 @@
 # CourseWork
-Course work for university from test work  
+Course work for university from test task   
 
 - Название веток feature/CW-XXX  
 - Сообщение коммита CW-XXX: Something title (где Something title короткое описание того что в коммите)  
