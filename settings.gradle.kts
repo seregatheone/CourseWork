@@ -14,4 +14,12 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "CourseWork"
-include(":app")
+include(
+    ":app",
+
+    ":core:dagger",
+    ":core:dependency",
+    ":core:uiComponents",
+
+    ":common:router"
+)
