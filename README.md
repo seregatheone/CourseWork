@@ -16,5 +16,5 @@ Course work for university from test task
 - Builder Project: `Gradle KTS`  
 
 
-#### figma design https://www.figma.com/file/KqZcU5m3GMxAHwgFkvCONz/ECOMMERCE?node-id=2%3A845&t=3zqabxf4QwmoPGtg-0
+#### figma design https://www.figma.com/file/tHVS9DiTzihPr8FepbR38N/Ecom-design?node-id=0%3A1&t=tRs36xCnqHhcLYjN-0
 #### text requirements https://docs.google.com/document/d/1VedkRcsN6yukGO2uWES4RuIM8KMtESZ8p7zD7nGySMs/edit  
