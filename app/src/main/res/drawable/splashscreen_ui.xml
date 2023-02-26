@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/project_blue"/>
+    <item android:drawable="@drawable/splashscreen_oval_shape"
+        android:gravity="center"/>
+    <item android:gravity="center"
+        android:start="@dimen/text_padding_start">
+        <layer-list>
+            <item android:drawable="@drawable/splashscreen_text"
+                android:width="@dimen/text_splashscreen_width"
+                android:height="@dimen/text_splashscreen_height"/>
+        </layer-list>
+    </item>
+</layer-list>

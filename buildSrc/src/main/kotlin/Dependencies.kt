@@ -113,4 +113,9 @@ object Dependencies {
         const val lib = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
     }
 
+    object Splashscreen{
+        private const val version = "1.0.0"
+        const val lib = "androidx.core:core-splashscreen:$version"
+    }
+
 }

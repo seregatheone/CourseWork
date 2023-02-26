@@ -61,8 +61,6 @@ android {
 }
 
 dependencies {
-
-
     implementation(Dependencies.Core.Ktx.lib)
     implementation(Dependencies.MaterialDesign.plugin_3)
     implementation(Dependencies.Compose.activity)
@@ -73,7 +71,8 @@ dependencies {
     implementation(Dependencies.Dagger.lib)
     kapt(Dependencies.Dagger.daggerCompiler)
 
-
     implementation(Dependencies.Accompanist.systemUiController)
     implementation(Dependencies.Accompanist.navigationAnimation)
+
+    implementation(Dependencies.Splashscreen.lib)
 }
