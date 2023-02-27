@@ -61,6 +61,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:uiComponents"))
+
     implementation(Dependencies.Core.Ktx.lib)
     implementation(Dependencies.MaterialDesign.plugin_3)
     implementation(Dependencies.Compose.activity)
