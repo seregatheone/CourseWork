@@ -61,7 +61,16 @@ android {
 }
 
 dependencies {
+
     implementation(project(":core:uiComponents"))
+    implementation(project(":core:dagger"))
+    implementation(project(":core:dependency"))
+
+    implementation(project(":common:router"))
+
+    implementation(project(":core:uiComponents"))
+
+    implementation(project(":features:home:presentation"))
 
     implementation(Dependencies.Core.Ktx.lib)
     implementation(Dependencies.MaterialDesign.plugin_3)

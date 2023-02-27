@@ -9,6 +9,7 @@ import androidx.navigation.NavHostController
 import com.google.accompanist.pager.ExperimentalPagerApi
 import pat.project.coursework.dependency.findDependencies
 import pat.project.coursework.dependency.injectedViewModel
+import pat.project.coursework.home.di.DaggerHomeComponent
 import pat.project.coursework.home.ui.HomeScreen
 import pat.project.coursework.homerouter.HomeEntry
 import pat.project.coursework.router.Destinations
@@ -25,15 +26,15 @@ class HomeEntryImpl @Inject constructor() : HomeEntry() {
     ) {
 
         val context = LocalContext.current
-//        val viewModel = injectedViewModel {
-//            DaggerHomeComponent.builder()
-//                .onBoardingDeps((context as Activity).findDependencies())
-//                .build()
-//                .onBoardingViewModel
-//        }
-//        HomeScreen(
-//            homeViewModel = viewModel
-//        )
+        val viewModel = injectedViewModel {
+            DaggerHomeComponent.builder()
+                .homeDeps((context as Activity).findDependencies())
+                .build()
+                .homeViewModel
+        }
+        HomeScreen(
+            homeViewModel = viewModel
+        )
 
     }
 }
