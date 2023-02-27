@@ -21,5 +21,8 @@ include(
     ":core:dependency",
     ":core:uiComponents",
 
-    ":common:router"
+    ":common:router",
+
+    ":features:home:router",
+    ":features:home:presentation"
 )

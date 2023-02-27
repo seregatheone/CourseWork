@@ -2,7 +2,7 @@ import org.gradle.api.JavaVersion
 
 object Dependencies {
     object Kotlin {
-        private const val version = "1.6.20"
+        private const val version = "1.8.10"
         const val plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
     }
     object Compose {
@@ -26,7 +26,7 @@ object Dependencies {
         const val targetSdk = 33
         const val versionCode = 1
         const val compileSdk = 33
-        const val kotlinCompilerExtensionVersion = "1.2.0-alpha08"
+        const val kotlinCompilerExtensionVersion = "1.4.3"
         val jvmTarget = JavaVersion.VERSION_1_8.toString()
         val jVersion = JavaVersion.VERSION_1_8
     }
@@ -116,6 +116,11 @@ object Dependencies {
     object Splashscreen{
         private const val version = "1.0.0"
         const val lib = "androidx.core:core-splashscreen:$version"
+    }
+
+    object Coil{
+        private const val version = "2.2.0"
+        const val lib = "io.coil-kt:coil-compose:$version"
     }
 
 }
