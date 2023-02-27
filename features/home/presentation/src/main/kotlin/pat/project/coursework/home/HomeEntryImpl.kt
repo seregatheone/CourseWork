@@ -25,15 +25,15 @@ class HomeEntryImpl @Inject constructor() : HomeEntry() {
     ) {
 
         val context = LocalContext.current
-        val viewModel = injectedViewModel {
-            DaggerHomeComponent.builder()
-                .onBoardingDeps((context as Activity).findDependencies())
-                .build()
-                .onBoardingViewModel
-        }
-        HomeScreen(
-            homeViewModel = viewModel
-        )
+//        val viewModel = injectedViewModel {
+//            DaggerHomeComponent.builder()
+//                .onBoardingDeps((context as Activity).findDependencies())
+//                .build()
+//                .onBoardingViewModel
+//        }
+//        HomeScreen(
+//            homeViewModel = viewModel
+//        )
 
     }
 }
