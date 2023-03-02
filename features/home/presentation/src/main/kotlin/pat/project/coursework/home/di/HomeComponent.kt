@@ -15,7 +15,7 @@ interface HomeComponent {
         fun homeDeps(deps: HomeDeps): Builder
         fun build(): HomeComponent
     }
-//    val homeViewModel: HomeViewModel
+    val homeViewModel: HomeViewModel
 }
 
 interface HomeDeps : Dependencies {

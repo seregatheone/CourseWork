@@ -9,6 +9,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import pat.project.coursework.dependency.destinationsProvider
+import pat.project.coursework.dependency.findDestinations
+import pat.project.coursework.homerouter.HomeEntry
+import pat.project.coursework.ui.themes.AppResources
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
@@ -16,9 +20,23 @@ fun Navigation() {
     val navController = rememberAnimatedNavController()
     val context = (LocalContext.current as Activity)
 
+    val homeScreen = context.findDestinations<HomeEntry>()
+
+    val standardEnterTransaction = AppResources.animations.standardEnterTransaction
+    val standardExitTransition = AppResources.animations.standardExitTransition
+
+
     Box(Modifier.fillMaxSize()) {
-//        AnimatedNavHost(navController, startDestination = splashscreen.destination()) {
-//
-//        }
+        AnimatedNavHost(navController, startDestination = homeScreen.destination()) {
+            with(homeScreen) {
+                animatedComposable(
+                    navController,
+                    context.destinationsProvider,
+                    enterTransition = { standardEnterTransaction },
+                    exitTransition = { standardExitTransition },
+                    popEnterTransition = null
+                )
+            }
+        }
     }
 }
