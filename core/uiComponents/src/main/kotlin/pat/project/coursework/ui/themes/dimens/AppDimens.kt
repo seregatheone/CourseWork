@@ -26,10 +26,11 @@ data class AppDimens(
 )
 
 data class TextSizes(
-    val textSize30: TextUnit,
-    val textSize25: TextUnit,
-    val textSize15: TextUnit,
     val textSize12: TextUnit,
+    val textSize15: TextUnit,
+    val textSize16: TextUnit,
+    val textSize25: TextUnit,
+    val textSize30: TextUnit,
 )
 
 //data class LetterSpacing(
@@ -43,10 +44,11 @@ data class TextSizes(
 
 
 internal val regularTextSizes = TextSizes(
-    textSize30 = 30.sp,
-    textSize25 = 25.sp,
+    textSize12 = 12.sp,
     textSize15 = 15.sp,
-    textSize12 = 12.sp
+    textSize16 = 16.sp,
+    textSize25 = 25.sp,
+    textSize30 = 30.sp,
 )
 
 //internal val regularLetterSpacings = LetterSpacing(

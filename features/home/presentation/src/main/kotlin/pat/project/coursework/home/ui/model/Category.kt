@@ -1,4 +1,4 @@
-package pat.project.coursework.home.ui.category.model
+package pat.project.coursework.home.ui.model
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.ui.graphics.vector.ImageVector

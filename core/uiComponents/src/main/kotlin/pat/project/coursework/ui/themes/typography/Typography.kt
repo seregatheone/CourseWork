@@ -15,15 +15,18 @@ data class Heavy(
 )
 
 data class Bold(
+    val sp12 : TextStyle,
+    val sp16 : TextStyle,
     val sp25 : TextStyle
 )
 
 data class Medium(
+    val sp12 : TextStyle,
     val sp15 : TextStyle,
-    val sp12 : TextStyle
 )
 
 data class Regular(
+    val sp12 : TextStyle,
     val sp15 : TextStyle
 )
 

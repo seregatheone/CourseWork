@@ -14,8 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import pat.project.coursework.features.home.presentation.R
-import pat.project.coursework.home.ui.category.model.CategoriesStyles
-import pat.project.coursework.home.ui.category.model.Category
+import pat.project.coursework.home.ui.model.CategoriesStyles
+import pat.project.coursework.home.ui.model.Category
 import pat.project.coursework.ui.themes.AppResources
 
 @Composable

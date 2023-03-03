@@ -11,6 +11,7 @@ sealed class AppColors(
     val Blue: Color,
     val BackgroundWhite : Color,
     val White : Color,
+    val GreyDust : Color,
     val GreyLight : Color,
     val GreyMedium : Color,
     val GreyDark : Color
@@ -20,6 +21,7 @@ sealed class AppColors(
         Blue = ProjectBlue,
         BackgroundWhite  = ProjectBackgroundWhite,
         White  = ProjectWhite,
+        GreyDust = ProjectGreyDust,
         GreyLight = ProjectGreyLight,
         GreyMedium = ProjectGreyMedium,
         GreyDark = ProjectGrayDark
@@ -30,6 +32,7 @@ sealed class AppColors(
         Blue = ProjectBlue,
         BackgroundWhite  = ProjectBackgroundWhite,
         White  = ProjectWhite,
+        GreyDust = ProjectGreyDust,
         GreyLight = ProjectGreyLight,
         GreyMedium = ProjectGreyMedium,
         GreyDark = ProjectGrayDark

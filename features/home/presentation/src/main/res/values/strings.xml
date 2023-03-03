@@ -3,6 +3,7 @@
     <string name="location_icon">location icon</string>
     <string name="filter_icon">filter icon</string>
     <string name="current_location">Zihuatanejo, Gro</string>
+
     <string name="select_category">Select Category</string>
     <string name="select_category_icon">select category icon</string>
     <string name="view_all">view all</string>
@@ -12,4 +13,13 @@
     <string name="icon_clean">clean text</string>
 
     <string name="qrcode">qrcode</string>
+
+    <string name="hot_sales">Hot sales</string>
+    <string name="see_more">see more</string>
+
+    <string name="buy_now_text">Buy now!</string>
+    <string name="new_marker_text">New</string>
+
+    <string name="favorite_icon_description">favorite icon</string>
+
 </resources>

@@ -3,7 +3,7 @@ package pat.project.coursework.home.ui.category
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.ui.Modifier
-import pat.project.coursework.home.ui.category.model.Category
+import pat.project.coursework.home.ui.model.Category
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
