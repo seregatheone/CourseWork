@@ -2,7 +2,7 @@ import org.gradle.api.JavaVersion
 
 object Dependencies {
     object Kotlin {
-        private const val version = "1.8.10"
+        private const val version = "1.6.20"
         const val plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
     }
     object Compose {
@@ -26,7 +26,7 @@ object Dependencies {
         const val targetSdk = 33
         const val versionCode = 1
         const val compileSdk = 33
-        const val kotlinCompilerExtensionVersion = "1.4.3"
+        const val kotlinCompilerExtensionVersion = "1.2.0-alpha08"
         val jvmTarget = JavaVersion.VERSION_1_8.toString()
         val jVersion = JavaVersion.VERSION_1_8
     }

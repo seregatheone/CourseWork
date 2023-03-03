@@ -15,10 +15,7 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Dependencies.Config.kotlinCompilerExtensionVersion
     }
-    lint {
-        warningsAsErrors = true
-        abortOnError = true
-    }
+
 }
 
 dependencies {

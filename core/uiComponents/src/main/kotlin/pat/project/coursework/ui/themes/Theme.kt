@@ -1,6 +1,8 @@
 package pat.project.coursework.ui.themes
 
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material.ripple.LocalRippleTheme
+import androidx.compose.material.ripple.RippleTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -22,7 +24,6 @@ import pat.project.coursework.ui.themes.typography.AppTypography
 import pat.project.coursework.ui.themes.typography.LocalAppTypography
 import pat.project.coursework.ui.themes.typography.appTypography
 
-
 object AppResources {
     val colors: AppColors
         @Composable
@@ -43,6 +44,7 @@ object AppResources {
         @Composable
         @ReadOnlyComposable
         get() = LocalAnimationsProvider.current
+
 }
 
 @Composable

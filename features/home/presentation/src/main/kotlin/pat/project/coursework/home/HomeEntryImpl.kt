@@ -13,11 +13,11 @@ import pat.project.coursework.home.di.DaggerHomeComponent
 import pat.project.coursework.home.ui.HomeScreen
 import pat.project.coursework.homerouter.HomeEntry
 import pat.project.coursework.router.Destinations
+import pat.project.coursework.ui.themes.colors.LocalExtendedColors
 import javax.inject.Inject
 
 class HomeEntryImpl @Inject constructor() : HomeEntry() {
 
-    @OptIn(ExperimentalAnimationApi::class, ExperimentalPagerApi::class)
     @Composable
     override fun Composable(
         navController: NavHostController,
@@ -32,6 +32,7 @@ class HomeEntryImpl @Inject constructor() : HomeEntry() {
                 .build()
                 .homeViewModel
         }
+
         HomeScreen(
             homeViewModel = viewModel
         )

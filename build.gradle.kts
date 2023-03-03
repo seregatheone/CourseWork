@@ -17,3 +17,6 @@ allprojects {
         kotlinOptions.jvmTarget = "1.8"
     }
 }
+tasks.register("clean").configure {
+    delete(rootProject.buildDir)
+}

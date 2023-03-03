@@ -19,7 +19,8 @@ data class Bold(
 )
 
 data class Medium(
-    val sp15 : TextStyle
+    val sp15 : TextStyle,
+    val sp12 : TextStyle
 )
 
 data class Regular(

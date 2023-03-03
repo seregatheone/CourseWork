@@ -13,36 +13,41 @@ import pat.project.coursework.ui.themes.dimens.AppDimens
 
 fun appTypography(dims: AppDimens): AppTypography = AppTypography(
 
-        heavy = Heavy(
-            sp30 = TextStyle(
-                fontFamily = AppFontFamilies.MarkPro,
-                fontWeight = FontWeight.W800,
-                fontSize = dims.textSizes.textSize30
-                )
+    heavy = Heavy(
+        sp30 = TextStyle(
+            fontFamily = AppFontFamilies.MarkPro,
+            fontWeight = FontWeight.W800,
+            fontSize = dims.textSizes.textSize30
+        )
+    ),
+    bold = Bold(
+        sp25 = TextStyle(
+            fontFamily = AppFontFamilies.MarkPro,
+            fontWeight = FontWeight.W700,
+            fontSize = dims.textSizes.textSize25
+        )
+    ),
+    medium = Medium(
+        sp15 = TextStyle(
+            fontFamily = AppFontFamilies.MarkPro,
+            fontWeight = FontWeight.W500,
+            fontSize = dims.textSizes.textSize15
         ),
-        bold = Bold(
-            sp25 = TextStyle(
-                fontFamily = AppFontFamilies.MarkPro,
-                fontWeight = FontWeight.W700,
-                fontSize = dims.textSizes.textSize25
-            )
+        sp12 = TextStyle(
+            fontFamily = AppFontFamilies.MarkPro,
+            fontWeight = FontWeight.W500,
+            fontSize = dims.textSizes.textSize12
         ),
-        medium = Medium(
-            sp15 = TextStyle(
-                fontFamily = AppFontFamilies.MarkPro,
-                fontWeight = FontWeight.W500,
-                fontSize = dims.textSizes.textSize15
-            )
-        ),
+    ),
+
     regular = Regular(
         sp15 = TextStyle(
-                fontFamily = AppFontFamilies.MarkPro,
-                fontWeight = FontWeight.W400,
-                fontSize = dims.textSizes.textSize15
-            )
-
+            fontFamily = AppFontFamilies.MarkPro,
+            fontWeight = FontWeight.W400,
+            fontSize = dims.textSizes.textSize15
         )
     )
+)
 
 
 @Immutable
