@@ -1,6 +1,7 @@
 package pat.project.coursework.home.ui
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
@@ -36,9 +37,10 @@ fun HomeScreen(
         topBar = { HomeAppBar() },
         bottomBar = {}
     ) { paddingValues ->
-        LazyColumn(
+        Column(
             modifier = Modifier
                 .background(AppResources.colors.BackgroundWhite)
+                .verticalScroll(rememberScrollState())
                 .padding(
                     start = 12.dp,
                     end = 12.dp,
@@ -46,21 +48,18 @@ fun HomeScreen(
                     bottom = paddingValues.calculateBottomPadding()
                 )
         ) {
-            item {
-                SelectCategory(
-                    categories.value,
-                    selectedCategory,
-                    onCategorySelected = { category: Category ->
-                        selectedCategory = category
-                    }
-                )
-            }
-            item {
-                HotSales(hotSalesItemsList)
-            }
-            item {
-                BestSellersLayout(bestSellerList = bestSellersItemsList)
-            }
+            SelectCategory(
+                categories.value,
+                selectedCategory,
+                onCategorySelected = { category: Category ->
+                    selectedCategory = category
+                }
+            )
+
+            HotSales(hotSalesItemsList)
+
+            BestSellersLayout(bestSellerList = bestSellersItemsList)
+
         }
     }
 

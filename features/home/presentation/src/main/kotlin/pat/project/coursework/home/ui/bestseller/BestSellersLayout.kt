@@ -41,7 +41,7 @@ fun BestSellersLayout(
         }
         LazyVerticalGrid(
             modifier = Modifier
-                .padding(top = 16.dp)
+                .padding(top = 12.dp)
                 .fillMaxWidth()
                 .sizeIn(
                     maxHeight = 600.dp

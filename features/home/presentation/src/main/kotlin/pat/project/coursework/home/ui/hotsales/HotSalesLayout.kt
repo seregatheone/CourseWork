@@ -44,6 +44,7 @@ fun HotSales(
         }
 
         HorizontalPager(
+            modifier = Modifier.padding(top = 4.dp),
             count = hotSalesList.size,
             itemSpacing = 12.dp
         ) { currentPage ->
