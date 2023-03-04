@@ -18,6 +18,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
+import pat.project.coursework.home.ui.appbars.BottomNavigationBar
 import pat.project.coursework.home.ui.bestseller.BestSellersLayout
 import pat.project.coursework.home.ui.bottomsheet.FilterOptions
 import pat.project.coursework.home.ui.bottomsheet.ModalBottomSheet
@@ -95,7 +96,9 @@ fun HomeScreen(
                     openFilterBottomSheet = { scope.launch { sheetState.show() } }
                 )
             },
-            bottomBar = {}
+            bottomBar = {
+                BottomNavigationBar()
+            }
         ) { paddingValues ->
             Column(
                 modifier = Modifier
