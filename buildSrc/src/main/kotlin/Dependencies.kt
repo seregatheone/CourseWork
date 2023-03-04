@@ -37,10 +37,12 @@ object Dependencies {
     }
 
     object MaterialDesign {
-        private const val version_2 = ""
+        private const val version = "1.3.1"
         private const val version_3 = "1.0.1"
-        const val plugin_2 = ""
+
+        const val plugin = "androidx.compose.material:material:$version"
         const val plugin_3 = "androidx.compose.material3:material3:$version_3"
+
         const val matherialIcons = "androidx.compose.material:material-icons-extended:$version_3"
     }
 

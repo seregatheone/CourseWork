@@ -23,4 +23,7 @@
 
     <string name="favorite_icon_description">favorite icon</string>
 
+    <string name="filter_params">Filter options</string>
+    <string name="filter_done">Done</string>
+
 </resources>
