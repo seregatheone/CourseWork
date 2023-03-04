@@ -26,6 +26,11 @@ fun appTypography(dims: AppDimens): AppTypography = AppTypography(
             fontWeight = FontWeight.W700,
             fontSize = dims.textSizes.textSize12
         ),
+        sp15 = TextStyle(
+            fontFamily = AppFontFamilies.MarkPro,
+            fontWeight = FontWeight.W700,
+            fontSize = dims.textSizes.textSize15
+        ),
         sp16 = TextStyle(
             fontFamily = AppFontFamilies.MarkPro,
             fontWeight = FontWeight.W700,

@@ -61,7 +61,8 @@ fun FilterOptionsItem(
                 .background(
                     color = AppResources.colors.White,
                     shape = RoundedCornerShape(5.dp)
-                ),
+                )
+                .clickable { expandedState = !expandedState },
             verticalAlignment = Alignment.CenterVertically
         ) {
             BasicTextField(
@@ -80,7 +81,8 @@ fun FilterOptionsItem(
                 decorationBox = { innerTextBox ->
                     Row(
                         modifier = Modifier
-                            .fillMaxWidth(),
+                            .fillMaxWidth()
+                            .clickable { expandedState = !expandedState },
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         if (filterText.isEmpty()) {
@@ -99,8 +101,7 @@ fun FilterOptionsItem(
                 imageVector = icon,
                 modifier = Modifier
                     .padding(end = 10.dp)
-                    .size(30.dp)
-                    .clickable { expandedState = !expandedState },
+                    .size(30.dp),
                 contentDescription = null
             )
         }
