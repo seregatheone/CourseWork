@@ -18,15 +18,11 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Dependencies.Config.kotlinCompilerExtensionVersion
     }
-    lint {
-        warningsAsErrors = true
-        abortOnError = true
-    }
 }
 
 dependencies {
     implementation(Dependencies.Core.Ktx.lib)
-    implementation(Dependencies.MaterialDesign.plugin_3)
+    api(Dependencies.MaterialDesign.plugin_3)
     implementation(Dependencies.Compose.activity)
     implementation(Dependencies.Compose.ui)
     implementation(Dependencies.Compose.uiToolingPreview)

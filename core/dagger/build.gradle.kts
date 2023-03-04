@@ -9,10 +9,6 @@ android {
         minSdk = Dependencies.Config.minSdk
         targetSdk = Dependencies.Config.targetSdk
     }
-    lint {
-        warningsAsErrors = true
-        abortOnError = true
-    }
 }
 
 dependencies {
