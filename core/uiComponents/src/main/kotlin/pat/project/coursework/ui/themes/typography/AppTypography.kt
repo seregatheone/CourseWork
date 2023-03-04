@@ -38,15 +38,21 @@ fun appTypography(dims: AppDimens): AppTypography = AppTypography(
         )
     ),
     medium = Medium(
+
+        sp12 = TextStyle(
+            fontFamily = AppFontFamilies.MarkPro,
+            fontWeight = FontWeight.W500,
+            fontSize = dims.textSizes.textSize12
+        ),
         sp15 = TextStyle(
             fontFamily = AppFontFamilies.MarkPro,
             fontWeight = FontWeight.W500,
             fontSize = dims.textSizes.textSize15
         ),
-        sp12 = TextStyle(
+        sp18 = TextStyle(
             fontFamily = AppFontFamilies.MarkPro,
             fontWeight = FontWeight.W500,
-            fontSize = dims.textSizes.textSize12
+            fontSize = dims.textSizes.textSize18
         ),
     ),
 
@@ -60,6 +66,11 @@ fun appTypography(dims: AppDimens): AppTypography = AppTypography(
             fontFamily = AppFontFamilies.MarkPro,
             fontWeight = FontWeight.W400,
             fontSize = dims.textSizes.textSize15
+        ),
+        sp18 = TextStyle(
+            fontFamily = AppFontFamilies.MarkPro,
+            fontWeight = FontWeight.W400,
+            fontSize = dims.textSizes.textSize18
         )
     )
 )

@@ -19,22 +19,22 @@ android {
 }
 
 dependencies {
-    api (project(":features:home:router"))
+    api(project(":features:home:router"))
     implementation(project(":common:router"))
-    implementation (project(":core:uiComponents"))
-    implementation (project(":core:dependency"))
-    implementation (project(":core:dagger"))
+    implementation(project(":core:uiComponents"))
+    implementation(project(":core:dependency"))
+    implementation(project(":core:dagger"))
 
-    implementation (Dependencies.Accompanist.navigationAnimation)
+    implementation(Dependencies.Accompanist.navigationAnimation)
 
     implementation(Dependencies.Coil.lib)
 
-    implementation (Dependencies.Accompanist.pager)
+    implementation(Dependencies.Accompanist.pager)
 
-    implementation (Dependencies.Core.Ktx.lib)
-    implementation (Dependencies.Compose.uiToolingPreview)
-    implementation (Dependencies.Dagger.lib)
-    kapt (Dependencies.Dagger.daggerCompiler)
+    implementation(Dependencies.Core.Ktx.lib)
+    implementation(Dependencies.Compose.uiToolingPreview)
+    implementation(Dependencies.Dagger.lib)
+    kapt(Dependencies.Dagger.daggerCompiler)
     implementation(Dependencies.Navigation.navigation)
 
     implementation(Dependencies.MaterialDesign.matherialIcons)

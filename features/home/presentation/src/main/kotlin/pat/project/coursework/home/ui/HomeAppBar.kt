@@ -15,7 +15,9 @@ import pat.project.coursework.ui.themes.AppResources
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeAppBar() =
+fun HomeAppBar(
+    openFilterBottomSheet: () -> Unit
+) =
     CenterAlignedTopAppBar(
         modifier = Modifier.padding(bottom = 0.dp),
         title = {
@@ -52,17 +54,20 @@ fun HomeAppBar() =
             }
         },
         actions = {
-            Icon(
-                modifier = Modifier
-                    .padding(end = 20.dp)
-                    .size(
-                        width = 18.dp,
-                        height = 22.dp
-                    ),
-                imageVector = Icons.Outlined.FilterAlt,
-                contentDescription = stringResource(id = R.string.filter_icon),
-                tint = AppResources.colors.Blue
-            )
+            IconButton(onClick = { openFilterBottomSheet() }) {
+                Icon(
+                    modifier = Modifier
+                        .padding(end = 20.dp)
+                        .size(
+                            width = 18.dp,
+                            height = 22.dp
+                        ),
+                    imageVector = Icons.Outlined.FilterAlt,
+                    contentDescription = stringResource(id = R.string.filter_icon),
+                    tint = AppResources.colors.Blue
+                )
+            }
+
         },
         scrollBehavior = null
     )

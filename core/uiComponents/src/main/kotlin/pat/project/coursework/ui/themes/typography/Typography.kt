@@ -23,11 +23,13 @@ data class Bold(
 data class Medium(
     val sp12 : TextStyle,
     val sp15 : TextStyle,
+    val sp18 : TextStyle,
 )
 
 data class Regular(
     val sp12 : TextStyle,
-    val sp15 : TextStyle
+    val sp15 : TextStyle,
+    val sp18 : TextStyle,
 )
 
 val LocalAppTypography = staticCompositionLocalOf<AppTypography> {

@@ -22,11 +22,11 @@ android {
 
 dependencies {
     implementation(Dependencies.Core.Ktx.lib)
+    api(Dependencies.MaterialDesign.plugin)
     api(Dependencies.MaterialDesign.plugin_3)
     implementation(Dependencies.Compose.activity)
     implementation(Dependencies.Compose.ui)
     implementation(Dependencies.Compose.uiToolingPreview)
-    implementation(Dependencies.Compose.androidxWindow)
     debugImplementation(Dependencies.Compose.uiTooling)
 
     implementation (Dependencies.Accompanist.systemUiController)
