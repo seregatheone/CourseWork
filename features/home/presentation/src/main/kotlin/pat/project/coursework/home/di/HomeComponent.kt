@@ -22,5 +22,4 @@ interface HomeComponent {
 
 interface HomeDeps : Dependencies {
     val homeInteractor : HomeInteractor
-    val homeRepository : HomeRepository
 }

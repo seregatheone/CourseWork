@@ -7,12 +7,14 @@ import dagger.Component
 import dagger.Module
 import dagger.Provides
 import pat.project.coursework.CourseWorkApplication
+import pat.project.coursework.cart.di.CartDeps
 import pat.project.coursework.di.featuresdeps.FeatureDepsModule
 import pat.project.coursework.di.modules.ApiNetworkModule
 import pat.project.coursework.di.modules.DataModule
 import pat.project.coursework.di.modules.InteractorsModule
 import pat.project.coursework.di.navigation.NavigationModule
 import pat.project.coursework.home.di.HomeDeps
+import pat.project.coursework.productsdetailes.di.ProductsDetailsDeps
 import javax.inject.Scope
 
 @Scope
@@ -33,8 +35,9 @@ annotation class AppScope
     ]
 )
 interface AppComponent :
-    HomeDeps
-{
+    HomeDeps,
+    CartDeps,
+    ProductsDetailsDeps {
     @Component.Builder
     interface Builder {
         @BindsInstance
