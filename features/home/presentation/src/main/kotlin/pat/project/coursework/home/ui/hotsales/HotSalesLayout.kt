@@ -1,5 +1,6 @@
 package pat.project.coursework.home.ui.hotsales
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.ui.Modifier
@@ -19,7 +20,8 @@ import pat.project.coursework.ui.themes.AppResources
 @Composable
 fun HotSales(
     modifier: Modifier = Modifier,
-    hotSalesList: List<HotSalesDataModel>
+    hotSalesList: List<HotSalesDataModel>,
+    navigateToProductsDetails: () -> Unit
 ) {
     Column(
         modifier = modifier
@@ -45,7 +47,9 @@ fun HotSales(
         }
 
         HorizontalPager(
-            modifier = Modifier.padding(top = 4.dp),
+            modifier = Modifier
+                .padding(top = 4.dp)
+                .clickable(true, onClick = navigateToProductsDetails),
             count = hotSalesList.size,
             itemSpacing = 12.dp
         ) { currentPage ->

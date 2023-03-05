@@ -32,7 +32,9 @@ import pat.project.coursework.ui.themes.AppResources
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterialApi::class)
 @Composable
 fun HomeScreen(
-    homeViewModel: HomeViewModel
+    homeViewModel: HomeViewModel,
+    navigateToCart: () -> Unit,
+    navigateToProductsDetails: () -> Unit
 ) {
     val categories = homeViewModel.categories.collectAsState()
     var selectedCategory by remember(categories) { mutableStateOf(categories.value.firstOrNull()) }
@@ -79,7 +81,9 @@ fun HomeScreen(
                 )
             },
             bottomBar = {
-                BottomNavigationBar()
+                BottomNavigationBar(
+                    navigateToCart = navigateToProductsDetails
+                )
             }
         ) { paddingValues ->
             Column(
@@ -105,12 +109,14 @@ fun HomeScreen(
 
                 HotSales(
                     modifier = Modifier,
-                    hotSalesItemsList
+                    hotSalesItemsList,
+                    navigateToProductsDetails = navigateToProductsDetails
                 )
 
                 BestSellersLayout(
                     modifier = Modifier,
-                    bestSellerList = bestSellersItemsList
+                    bestSellerList = bestSellersItemsList,
+                    navigateToProductsDetails = navigateToProductsDetails
                 )
 
             }
