@@ -20,6 +20,7 @@ import pat.project.coursework.ui.themes.ripple.NoRippleInteractionSource
 
 @Composable
 fun SelectCategory(
+    modifier: Modifier = Modifier,
     categories: List<Category>,
     selectedCategory: Category?,
     onCategorySelected: (Category) -> Unit
@@ -29,7 +30,7 @@ fun SelectCategory(
 
 
     Column(
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier.fillMaxWidth()
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),

@@ -1,4 +1,4 @@
-package pat.project.coursework.application
+package pat.project.coursework
 
 import android.app.Application
 import pat.project.coursework.dependency.DepsMap

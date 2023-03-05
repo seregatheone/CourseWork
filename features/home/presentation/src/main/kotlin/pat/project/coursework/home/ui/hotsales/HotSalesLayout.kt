@@ -11,17 +11,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
+import pat.project.coursework.entity.home.HotSalesDataModel
 import pat.project.coursework.features.home.presentation.R
-import pat.project.coursework.home.ui.model.HotSalesDataModel
 import pat.project.coursework.ui.themes.AppResources
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun HotSales(
+    modifier: Modifier = Modifier,
     hotSalesList: List<HotSalesDataModel>
 ) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .padding(top = 20.dp)
     ) {

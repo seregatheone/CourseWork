@@ -10,15 +10,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import pat.project.coursework.features.home.presentation.R
-import pat.project.coursework.home.ui.model.BestSellerDataModel
+import pat.project.coursework.entity.home.BestSellerDataModel
 import pat.project.coursework.ui.themes.AppResources
 
 @Composable
 fun BestSellersLayout(
+    modifier: Modifier = Modifier,
     bestSellerList: List<BestSellerDataModel>
 ) {
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .padding(top = 20.dp)
     ) {

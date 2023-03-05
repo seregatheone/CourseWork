@@ -16,6 +16,12 @@ android {
         versionCode = Dependencies.Config.versionCode
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField(
+            CourseWorkClient.DefauleSettings.TYPE_STRING,
+            CourseWorkClient.DefauleSettings.CONFIG_FIELD_MOCK,
+            CourseWorkClient.DefauleSettings.COURSE_WORK_BACKEND
+        )
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -61,14 +67,14 @@ android {
 }
 
 dependencies {
+    implementation(project(":data"))
+    implementation(project(":domain"))
 
     implementation(project(":core:uiComponents"))
     implementation(project(":core:dagger"))
     implementation(project(":core:dependency"))
 
     implementation(project(":common:router"))
-
-    implementation(project(":core:uiComponents"))
 
     implementation(project(":features:home:presentation"))
 
@@ -77,6 +83,7 @@ dependencies {
     implementation(Dependencies.Compose.activity)
     implementation(Dependencies.Compose.ui)
     implementation(Dependencies.Compose.uiToolingPreview)
+
     debugImplementation(Dependencies.Compose.uiTooling)
     implementation(Dependencies.Navigation.navigation)
     implementation(Dependencies.Dagger.lib)

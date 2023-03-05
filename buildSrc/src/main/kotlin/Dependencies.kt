@@ -91,17 +91,13 @@ object Dependencies {
 
     object Network {
         object Retrofit {
-            private const val versionRetrofit = "2.9.0"
-
-            const val retrofitMoshi = "com.squareup.retrofit2:converter-moshi:${versionRetrofit}"
-            const val lib = "com.squareup.retrofit2:retrofit:$versionRetrofit"
+            private const val version = "2.9.0"
+            const val lib = "com.squareup.retrofit2:retrofit:$version"
         }
 
-
-        object Moshi {
-            private const val moshiVersion = "1.14.0"
-            const val moshi = "com.squareup.moshi:moshi-kotlin:$moshiVersion"
-            const val moshiAdapter = "com.squareup.moshi:moshi-adapters:$moshiVersion"
+        object Gson {
+            private const val version = "2.9.0"
+            const val lib = "com.squareup.retrofit2:converter-gson:$version"
         }
 
         object Logging {
@@ -124,5 +120,6 @@ object Dependencies {
         private const val version = "2.2.0"
         const val lib = "io.coil-kt:coil-compose:$version"
     }
+
 
 }
