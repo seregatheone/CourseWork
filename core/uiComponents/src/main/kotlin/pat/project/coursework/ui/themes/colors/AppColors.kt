@@ -9,19 +9,21 @@ import androidx.compose.ui.graphics.Color
 sealed class AppColors(
     val Orange: Color,
     val Blue: Color,
-    val BackgroundWhite : Color,
-    val White : Color,
-    val GreyDust : Color,
-    val GreyDustLight : Color,
-    val GreyLight : Color,
-    val GreyMedium : Color,
-    val GreyDark : Color
+    val BackgroundWhite: Color,
+    val WhiteTransparent25: Color,
+    val White: Color,
+    val GreyDust: Color,
+    val GreyDustLight: Color,
+    val GreyLight: Color,
+    val GreyMedium: Color,
+    val GreyDark: Color
 ) {
     class LightThemeAppColors : AppColors(
         Orange = ProjectOrange,
         Blue = ProjectBlue,
-        BackgroundWhite  = ProjectBackgroundWhite,
-        White  = ProjectWhite,
+        BackgroundWhite = ProjectBackgroundWhite,
+        White = ProjectWhite,
+        WhiteTransparent25 = ProjectWhiteTransparent40,
         GreyDust = ProjectGreyDust,
         GreyDustLight = ProjectGreyDustLight,
         GreyLight = ProjectGreyLight,
@@ -32,8 +34,9 @@ sealed class AppColors(
     class DarkThemeAppColors : AppColors(
         Orange = ProjectOrange,
         Blue = ProjectBlue,
-        BackgroundWhite  = ProjectBackgroundWhite,
-        White  = ProjectWhite,
+        BackgroundWhite = ProjectBackgroundWhite,
+        White = ProjectWhite,
+        WhiteTransparent25 = ProjectWhiteTransparent40,
         GreyDust = ProjectGreyDust,
         GreyDustLight = ProjectGreyDustLight,
         GreyLight = ProjectGreyLight,

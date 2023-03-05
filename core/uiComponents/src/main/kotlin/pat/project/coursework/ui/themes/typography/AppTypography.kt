@@ -36,10 +36,20 @@ fun appTypography(dims: AppDimens): AppTypography = AppTypography(
             fontWeight = FontWeight.W700,
             fontSize = dims.textSizes.textSize16
         ),
+        sp20 = TextStyle(
+            fontFamily = AppFontFamilies.MarkPro,
+            fontWeight = FontWeight.W700,
+            fontSize = dims.textSizes.textSize20
+        ),
         sp25 = TextStyle(
             fontFamily = AppFontFamilies.MarkPro,
             fontWeight = FontWeight.W700,
             fontSize = dims.textSizes.textSize25
+        ),
+        sp35 = TextStyle(
+            fontFamily = AppFontFamilies.MarkPro,
+            fontWeight = FontWeight.W700,
+            fontSize = dims.textSizes.textSize35
         )
     ),
     medium = Medium(

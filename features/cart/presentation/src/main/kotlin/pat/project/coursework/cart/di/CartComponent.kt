@@ -8,16 +8,17 @@ import pat.project.coursework.dependency.Dependencies
 
 @FeatureScoped
 @Component(
-    dependencies = [CartDeps::class]
+    dependencies = []
 )
 interface CartComponent {
     @Component.Builder
     interface Builder {
-        fun cartDeps(deps: CartDeps): Builder
+//        fun cartDeps(deps: CartDeps): Builder
         fun build(): CartComponent
     }
     val cartViewModel: CartViewModel
 }
 
 interface CartDeps : Dependencies {
+
 }
