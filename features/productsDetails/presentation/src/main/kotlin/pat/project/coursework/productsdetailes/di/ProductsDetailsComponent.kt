@@ -7,12 +7,12 @@ import pat.project.coursework.productsdetailes.ui.ProductsDetailsViewModel
 
 @FeatureScoped
 @Component(
-    dependencies = [ProductsDetailsDeps::class]
+    dependencies = []
 )
 interface ProductsDetailsComponent {
     @Component.Builder
     interface Builder {
-        fun productsDetailsDeps(deps: ProductsDetailsDeps): Builder
+//        fun productsDetailsDeps(deps: ProductsDetailsDeps): Builder
         fun build(): ProductsDetailsComponent
     }
     val productsDetailsViewModel: ProductsDetailsViewModel

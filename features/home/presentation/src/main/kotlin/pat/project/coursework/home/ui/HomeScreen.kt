@@ -82,7 +82,7 @@ fun HomeScreen(
             },
             bottomBar = {
                 BottomNavigationBar(
-                    navigateToCart = navigateToProductsDetails
+                    navigateToCart = navigateToCart
                 )
             }
         ) { paddingValues ->

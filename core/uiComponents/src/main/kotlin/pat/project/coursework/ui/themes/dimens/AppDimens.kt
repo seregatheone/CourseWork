@@ -30,8 +30,10 @@ data class TextSizes(
     val textSize15: TextUnit,
     val textSize16: TextUnit,
     val textSize18: TextUnit,
+    val textSize20: TextUnit,
     val textSize25: TextUnit,
     val textSize30: TextUnit,
+    val textSize35: TextUnit,
 )
 
 //data class LetterSpacing(
@@ -49,8 +51,10 @@ internal val regularTextSizes = TextSizes(
     textSize15 = 15.sp,
     textSize16 = 16.sp,
     textSize18 = 18.sp,
+    textSize20 = 20.sp,
     textSize25 = 25.sp,
     textSize30 = 30.sp,
+    textSize35 = 35.sp
 )
 
 //internal val regularLetterSpacings = LetterSpacing(

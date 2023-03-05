@@ -5,6 +5,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
+import pat.project.coursework.cart.di.DaggerCartComponent
+import pat.project.coursework.cart.ui.CartScreen
 import pat.project.coursework.dependency.findDependencies
 import pat.project.coursework.dependency.injectedViewModel
 import pat.project.coursework.router.Destinations
@@ -19,11 +21,18 @@ class CartEntryImpl @Inject constructor() : CartEntry() {
         backStackEntry: NavBackStackEntry
     ) {
         val context = LocalContext.current
-//        val viewModel = injectedViewModel {
-//            DaggerHomeComponent.builder()
-//                .homeDeps((context as Activity).findDependencies())
-//                .build()
-//                .homeViewModel
-//        }
+        val viewModel = injectedViewModel {
+            DaggerCartComponent.builder()
+//                .cartDeps((context as Activity).findDependencies())
+                .build()
+                .cartViewModel
+        }
+
+        CartScreen(
+            cartViewModel = viewModel,
+            navigateBack = { navController.popBackStack() },
+            cartItems = emptyList()
+        )
+
     }
 }
