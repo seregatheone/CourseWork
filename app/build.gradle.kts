@@ -77,6 +77,8 @@ dependencies {
     implementation(project(":common:router"))
 
     implementation(project(":features:home:presentation"))
+    implementation(project(":features:cart:presentation"))
+    implementation(project(":features:productsDetails:presentation"))
 
     implementation(Dependencies.Core.Ktx.lib)
     implementation(Dependencies.MaterialDesign.plugin_3)

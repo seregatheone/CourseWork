@@ -19,6 +19,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":features:cart:router"))
+    implementation(project(":features:productsDetails:router"))
+
     api(project(":features:home:router"))
     implementation(project(":features:home:domain"))
     implementation(project(":common:router"))

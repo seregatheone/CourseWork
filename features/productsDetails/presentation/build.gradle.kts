@@ -19,8 +19,8 @@ android {
 }
 
 dependencies {
-    api(project(":features:cart:router"))
-    implementation(project(":features:cart:domain"))
+    api(project(":features:productsDetails:router"))
+    implementation(project(":features:productsDetails:domain"))
     implementation(project(":common:router"))
     implementation(project(":core:uiComponents"))
     implementation(project(":core:dependency"))
