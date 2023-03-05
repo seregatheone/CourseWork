@@ -4,6 +4,8 @@ import dagger.Component
 import pat.project.coursework.dagger.FeatureScoped
 import pat.project.coursework.dependency.Dependencies
 import pat.project.coursework.home.ui.HomeViewModel
+import pat.project.coursework.interactor.HomeInteractor
+import pat.project.coursework.repository.HomeRepository
 
 @FeatureScoped
 @Component(
@@ -19,4 +21,6 @@ interface HomeComponent {
 }
 
 interface HomeDeps : Dependencies {
+    val homeInteractor : HomeInteractor
+    val homeRepository : HomeRepository
 }

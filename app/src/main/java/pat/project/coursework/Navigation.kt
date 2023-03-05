@@ -2,6 +2,7 @@ package pat.project.coursework
 
 import android.app.Activity
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -26,7 +27,11 @@ fun Navigation() {
     val standardExitTransition = AppResources.animations.standardExitTransition
 
 
-    Box(Modifier.fillMaxSize()) {
+    Box(
+        Modifier
+            .fillMaxSize()
+            .background(AppResources.colors.BackgroundWhite)
+    ) {
         AnimatedNavHost(navController, startDestination = homeScreen.destination()) {
             with(homeScreen) {
                 animatedComposable(

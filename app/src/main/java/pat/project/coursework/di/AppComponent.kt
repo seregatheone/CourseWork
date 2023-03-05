@@ -6,8 +6,11 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.Module
 import dagger.Provides
-import pat.project.coursework.application.CourseWorkApplication
+import pat.project.coursework.CourseWorkApplication
 import pat.project.coursework.di.featuresdeps.FeatureDepsModule
+import pat.project.coursework.di.modules.ApiNetworkModule
+import pat.project.coursework.di.modules.DataModule
+import pat.project.coursework.di.modules.InteractorsModule
 import pat.project.coursework.di.navigation.NavigationModule
 import pat.project.coursework.home.di.HomeDeps
 import javax.inject.Scope
@@ -20,8 +23,13 @@ annotation class AppScope
 @Component(
     modules = [
         AppModule::class,
+
         FeatureDepsModule::class,
         NavigationModule::class,
+
+        ApiNetworkModule::class,
+        DataModule::class,
+        InteractorsModule::class
     ]
 )
 interface AppComponent :

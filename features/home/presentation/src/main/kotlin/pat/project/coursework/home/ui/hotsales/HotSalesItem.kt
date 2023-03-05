@@ -21,7 +21,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
-import pat.project.coursework.home.ui.model.HotSalesDataModel
+import pat.project.coursework.entity.home.HotSalesDataModel
 import pat.project.coursework.ui.themes.AppResources
 
 @Composable

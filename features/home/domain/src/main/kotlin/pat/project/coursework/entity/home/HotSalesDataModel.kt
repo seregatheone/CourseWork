@@ -1,4 +1,4 @@
-package pat.project.coursework.home.ui.model
+package pat.project.coursework.entity.home
 
 data class HotSalesDataModel(
     val id : Int,

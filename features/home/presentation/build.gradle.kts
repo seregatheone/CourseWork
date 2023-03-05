@@ -20,6 +20,7 @@ android {
 
 dependencies {
     api(project(":features:home:router"))
+    implementation(project(":features:home:domain"))
     implementation(project(":common:router"))
     implementation(project(":core:uiComponents"))
     implementation(project(":core:dependency"))

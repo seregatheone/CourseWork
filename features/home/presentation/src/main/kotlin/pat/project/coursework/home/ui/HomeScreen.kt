@@ -25,7 +25,7 @@ import pat.project.coursework.home.ui.bottomsheet.ModalBottomSheet
 import pat.project.coursework.home.ui.category.SelectCategory
 import pat.project.coursework.home.ui.model.Category
 import pat.project.coursework.home.ui.hotsales.HotSales
-import pat.project.coursework.home.ui.model.BestSellersMock
+import pat.project.coursework.home.ui.model.FilterOptionsMock
 import pat.project.coursework.ui.themes.AppResources
 
 
@@ -48,6 +48,10 @@ fun HomeScreen(
 
     val scope = rememberCoroutineScope()
 
+    LaunchedEffect(key1 = Unit) {
+        homeViewModel.makeRequestForData()
+    }
+
     BackHandler(sheetState.isVisible) {
         scope.launch { sheetState.hide() }
     }
@@ -57,40 +61,18 @@ fun HomeScreen(
         sheetShape = RoundedCornerShape(topStart = 30.dp, topEnd = 30.dp),
         sheetContent = {
             ModalBottomSheet(
-                filterOptions = listOf(
-                    FilterOptions(
-                        stateTitle = "Brand",
-                        variants = listOf(
-                            "Sumsung",
-                            "Iphone",
-                            "Xiaomi"
-                        )
-                    ),
-                    FilterOptions(
-                        stateTitle = "Price",
-                        variants = listOf(
-                            "$300 - $500",
-                            "$500 - $800",
-                            "$800 - $1200"
-                        )
-                    ),
-                    FilterOptions(
-                        stateTitle = "Size",
-                        variants = listOf(
-                            "4.5 to 5.5 inches",
-                            "5.5 to 6.5 inches",
-                            "6.5 to 7.5 inches"
-                        )
-                    )
-                ),
+                filterOptions = FilterOptionsMock.filterOptions,
                 hideBottomSheet = { scope.launch { sheetState.hide() } }
             )
         },
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .background(AppResources.colors.BackgroundWhite)
     ) {
         Scaffold(
             modifier = Modifier
-                .fillMaxSize(),
+                .fillMaxSize()
+                .background(AppResources.colors.White),
             topBar = {
                 HomeAppBar(
                     openFilterBottomSheet = { scope.launch { sheetState.show() } }
@@ -102,6 +84,7 @@ fun HomeScreen(
         ) { paddingValues ->
             Column(
                 modifier = Modifier
+                    .fillMaxSize()
                     .background(AppResources.colors.BackgroundWhite)
                     .verticalScroll(rememberScrollState())
                     .padding(
@@ -112,6 +95,7 @@ fun HomeScreen(
                     )
             ) {
                 SelectCategory(
+                    modifier = Modifier,
                     categories.value,
                     selectedCategory,
                     onCategorySelected = { category: Category ->
@@ -119,9 +103,15 @@ fun HomeScreen(
                     }
                 )
 
-                HotSales(hotSalesItemsList)
+                HotSales(
+                    modifier = Modifier,
+                    hotSalesItemsList
+                )
 
-                BestSellersLayout(bestSellerList = bestSellersItemsList)
+                BestSellersLayout(
+                    modifier = Modifier,
+                    bestSellerList = bestSellersItemsList
+                )
 
             }
         }
