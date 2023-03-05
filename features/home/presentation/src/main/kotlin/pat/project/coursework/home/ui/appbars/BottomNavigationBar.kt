@@ -1,5 +1,6 @@
 package pat.project.coursework.home.ui.appbars
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -21,12 +22,15 @@ import pat.project.coursework.features.home.presentation.R
 import pat.project.coursework.ui.themes.AppResources
 
 @Composable
-fun BottomNavigationBar() = BottomAppBar(
+fun BottomNavigationBar(
+    navigateToCart: () -> Unit,
+) = BottomAppBar(
     modifier = Modifier.clip(RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp)),
     backgroundColor = AppResources.colors.Blue,
     contentColor = AppResources.colors.White,
-    contentPadding = PaddingValues(vertical = 4.dp)
-) {
+    contentPadding = PaddingValues(vertical = 4.dp),
+
+    ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
@@ -47,22 +51,27 @@ fun BottomNavigationBar() = BottomAppBar(
         }
 
         Icon(
-            modifier = Modifier.size(24.dp),
+            modifier = Modifier
+                .size(24.dp)
+                .clickable(true, onClick = navigateToCart),
             imageVector = Icons.Outlined.ShoppingBag,
             tint = AppResources.colors.White,
-            contentDescription = null)
+            contentDescription = null
+        )
 
         Icon(
             modifier = Modifier.size(24.dp),
             imageVector = Icons.Outlined.FavoriteBorder,
             tint = AppResources.colors.White,
-            contentDescription = null)
+            contentDescription = null
+        )
 
         Icon(
             modifier = Modifier.size(24.dp),
             imageVector = Icons.Outlined.Person,
             tint = AppResources.colors.White,
-            contentDescription = null)
+            contentDescription = null
+        )
 
 
     }

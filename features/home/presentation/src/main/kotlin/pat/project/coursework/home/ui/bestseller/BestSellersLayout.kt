@@ -1,5 +1,6 @@
 package pat.project.coursework.home.ui.bestseller
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -16,7 +17,8 @@ import pat.project.coursework.ui.themes.AppResources
 @Composable
 fun BestSellersLayout(
     modifier: Modifier = Modifier,
-    bestSellerList: List<BestSellerDataModel>
+    bestSellerList: List<BestSellerDataModel>,
+    navigateToProductsDetails : () -> Unit
 ) {
     Column(
         modifier = modifier
@@ -44,6 +46,7 @@ fun BestSellersLayout(
             modifier = Modifier
                 .padding(top = 12.dp)
                 .fillMaxWidth()
+                .clickable(true,onClick = navigateToProductsDetails)
                 .sizeIn(
                     maxHeight = 600.dp
                 ),

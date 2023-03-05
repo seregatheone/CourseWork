@@ -19,11 +19,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":features:cart:router"))
-    implementation(project(":features:productsDetails:router"))
-
-    api(project(":features:home:router"))
-    implementation(project(":features:home:domain"))
+    api(project(":features:productsDetails:router"))
+    implementation(project(":features:productsDetails:domain"))
     implementation(project(":common:router"))
     implementation(project(":core:uiComponents"))
     implementation(project(":core:dependency"))
@@ -32,8 +29,6 @@ dependencies {
     implementation(Dependencies.Accompanist.navigationAnimation)
 
     implementation(Dependencies.Coil.lib)
-
-    implementation(Dependencies.Accompanist.pager)
 
     implementation(Dependencies.Core.Ktx.lib)
     implementation(Dependencies.Compose.uiToolingPreview)
