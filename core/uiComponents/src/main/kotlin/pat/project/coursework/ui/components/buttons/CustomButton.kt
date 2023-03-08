@@ -49,15 +49,16 @@ fun CustomButton(
                     .clickable(true, onClick = onClick),
                 text = buttonStyle.buttonText,
                 style = buttonStyle.buttonTextStyle.copy(
-                    color = AppResources.colors.White
+                    color = buttonStyle.textColor
                 ),
             )
         }
 
         is ButtonStyles.FullCustomButton -> {
             Button(
-                modifier = modifier,
+                modifier = modifier.height(48.dp),
                 onClick = { onClick() },
+                shape = RoundedCornerShape(10.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = selectColor(buttonStyle.buttonBackgroundColors),
                     contentColor = AppResources.colors.White

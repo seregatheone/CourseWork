@@ -55,6 +55,8 @@ object Dependencies {
     object Accompanist {
         private const val version = "0.27.0"
 
+        const val flowRow = "com.google.accompanist:accompanist-flowlayout:$version"
+
         const val pager = "com.google.accompanist:accompanist-pager:$version"
         const val systemUiController =
             "com.google.accompanist:accompanist-systemuicontroller:$version"
