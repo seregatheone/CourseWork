@@ -9,7 +9,7 @@ class ProductDetailsInteractorImpl(
     private val repository: ProductDetailedRepository
 ) : ProductDetailedInteractor {
 
-    override suspend fun getHomeInfo(): Entity<ProductDetailedData> {
+    override suspend fun getProductDetailedInfo(): Entity<ProductDetailedData> {
         return repository.getHomeInfo()
     }
 }

@@ -18,6 +18,7 @@ sealed class AppColors(
     val GreyMedium: Color,
     val GreyDarkLight: Color,
     val GreyDarkDark: Color,
+    val MemoryGrey : Color
 ) {
     class LightThemeAppColors : AppColors(
         Orange = ProjectOrange,
@@ -30,7 +31,8 @@ sealed class AppColors(
         GreyLight = ProjectGreyLight,
         GreyMedium = ProjectGreyMedium,
         GreyDarkLight = ProjectGrayDarkLight,
-        GreyDarkDark = ProjectGrayDarkDark
+        GreyDarkDark = ProjectGrayDarkDark,
+        MemoryGrey = ProjectMemoryGray
     )
 
     class DarkThemeAppColors : AppColors(
@@ -44,7 +46,8 @@ sealed class AppColors(
         GreyLight = ProjectGreyLight,
         GreyMedium = ProjectGreyMedium,
         GreyDarkLight = ProjectGrayDarkLight,
-        GreyDarkDark = ProjectGrayDarkDark
+        GreyDarkDark = ProjectGrayDarkDark,
+        MemoryGrey = ProjectMemoryGray
     )
 }
 

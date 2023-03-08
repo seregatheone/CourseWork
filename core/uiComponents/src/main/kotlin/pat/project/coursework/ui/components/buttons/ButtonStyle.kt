@@ -9,7 +9,7 @@ import androidx.compose.ui.text.TextStyle
 sealed class ButtonStyles{
     class CustomTextButton(
         val buttonBackgroundColors: ButtonBackgroundColors,
-        val paddingValues: PaddingValues,
+        val paddingValues: PaddingValues = PaddingValues(),
         val buttonTextStyle: TextStyle,
         val textColor : Color,
         val buttonText: String

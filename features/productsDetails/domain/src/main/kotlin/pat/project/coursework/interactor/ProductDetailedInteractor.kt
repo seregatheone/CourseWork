@@ -5,5 +5,5 @@ import pat.project.coursework.common.domain.entity.Entity
 
 
 interface ProductDetailedInteractor {
-    suspend fun getHomeInfo(): Entity<ProductDetailedData>
+    suspend fun getProductDetailedInfo(): Entity<ProductDetailedData>
 }
