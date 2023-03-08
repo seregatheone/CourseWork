@@ -31,7 +31,6 @@ class CartEntryImpl @Inject constructor() : CartEntry() {
         CartScreen(
             cartViewModel = viewModel,
             navigateBack = { navController.popBackStack() },
-            cartItems = emptyList()
         )
 
     }
