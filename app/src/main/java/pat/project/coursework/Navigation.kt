@@ -29,7 +29,7 @@ fun Navigation() {
 
     val standardEnterTransaction = AppResources.animations.standardEnterTransaction
     val standardExitTransition = AppResources.animations.standardExitTransition
-
+    val standardPopEnterTransition = AppResources.animations.standardPopEnterTransition
 
     Box(
         Modifier
@@ -43,7 +43,7 @@ fun Navigation() {
                     context.destinationsProvider,
                     enterTransition = { standardEnterTransaction },
                     exitTransition = { standardExitTransition },
-                    popEnterTransition = null
+                    popEnterTransition = { standardPopEnterTransition }
                 )
             }
 
@@ -53,7 +53,7 @@ fun Navigation() {
                     context.destinationsProvider,
                     enterTransition = { standardEnterTransaction },
                     exitTransition = { standardExitTransition },
-                    popEnterTransition = null
+                    popEnterTransition = { standardPopEnterTransition }
                 )
             }
 
@@ -63,7 +63,7 @@ fun Navigation() {
                     context.destinationsProvider,
                     enterTransition = { standardEnterTransaction },
                     exitTransition = { standardExitTransition },
-                    popEnterTransition = null
+                    popEnterTransition = { standardPopEnterTransition }
                 )
             }
 

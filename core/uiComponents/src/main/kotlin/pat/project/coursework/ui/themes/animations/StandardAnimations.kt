@@ -27,6 +27,15 @@ object StandardAnimations {
                 easing = LinearEasing
             )
         )
+
+    val standardPopEnterTransition =
+        slideInHorizontally(
+            initialOffsetX = { -standardEnterTransactionOffset },
+            animationSpec = tween(
+                durationMillis = standardExitTransitionAnimationSpecTime,
+                easing = LinearEasing
+            )
+        )
 }
 
 val LocalAnimationsProvider = staticCompositionLocalOf<StandardAnimations> {
