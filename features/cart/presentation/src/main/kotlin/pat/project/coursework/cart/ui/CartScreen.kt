@@ -13,6 +13,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.ArrowBackIos
 import androidx.compose.material.icons.outlined.Place
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -27,9 +29,15 @@ import pat.project.coursework.ui.themes.AppResources
 @Composable
 fun CartScreen(
     cartViewModel: CartViewModel,
-    cartItems: List<CartItems>,
     navigateBack: () -> Unit
 ) {
+
+    val cartData = cartViewModel.cartData.collectAsState()
+
+    LaunchedEffect(key1 = Unit) {
+        cartViewModel.makeRequestForData()
+    }
+
     Scaffold(
         modifier = Modifier
             .fillMaxSize()
@@ -87,14 +95,15 @@ fun CartScreen(
                 shape = RoundedCornerShape(topStart = 30.dp, topEnd = 30.dp)
             ) {
                 Column {
+                    val cartItems = cartData.value.cartItem
                     LazyColumn(
                         modifier = Modifier
-                            .padding(24.dp)
+                            .padding(start = 24.dp, end = 12.dp, top = 24.dp, bottom = 24.dp)
                             .weight(1f)
                             .sizeIn(maxHeight = 600.dp)
                     ) {
                         items(cartItems.size) { currentItemId ->
-                            cartItems[currentItemId]
+                            CartItemUI(cartItems[currentItemId])
                         }
                     }
                     Spacer(
@@ -118,19 +127,19 @@ fun CartScreen(
                             )
                             Text(
                                 modifier = Modifier.padding(top = 12.dp),
-                                text = stringResource(id = R.string.total),
+                                text = stringResource(id = R.string.delivery),
                                 style = AppResources.typography.regular.sp15.copy(color = AppResources.colors.White)
                             )
                         }
                         Column(
                         ) {
                             Text(
-                                text = stringResource(id = R.string.total),
+                                text = "$${cartData.value.total} us",
                                 style = AppResources.typography.regular.sp15.copy(color = AppResources.colors.White)
                             )
                             Text(
                                 modifier = Modifier.padding(top = 12.dp),
-                                text = stringResource(id = R.string.total),
+                                text = cartData.value.delivery,
                                 style = AppResources.typography.regular.sp15.copy(color = AppResources.colors.White)
                             )
                         }
