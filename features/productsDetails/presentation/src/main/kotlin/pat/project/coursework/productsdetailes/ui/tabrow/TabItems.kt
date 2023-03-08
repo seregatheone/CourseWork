@@ -15,6 +15,6 @@ sealed class TabItems() {
 
     class Features : TabItems() {
         override val tabItemTitle: String
-            get() = "Details"
+            get() = "Features"
     }
 }

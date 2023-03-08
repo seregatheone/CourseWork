@@ -17,11 +17,14 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.ColorPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.core.graphics.toColorInt
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import com.google.accompanist.flowlayout.FlowRow
@@ -32,6 +35,10 @@ import pat.project.coursework.ui.components.buttons.ButtonStyles
 import pat.project.coursework.ui.components.buttons.CustomButton
 import pat.project.coursework.ui.themes.AppResources
 import pat.project.coursework.features.productsDetails.presentation.R
+import pat.project.coursework.productsdetailes.ui.models.color.ColorItem
+import pat.project.coursework.productsdetailes.ui.models.color.ColorItemUi
+import pat.project.coursework.productsdetailes.ui.models.memory.MemoryItem
+import pat.project.coursework.productsdetailes.ui.models.memory.MemoryItemUi
 import pat.project.coursework.productsdetailes.ui.properties.PropertyItem
 import pat.project.coursework.productsdetailes.ui.properties.PropertyItemUi
 import pat.project.coursework.productsdetailes.ui.ratingbar.CustomRatingBar
@@ -46,40 +53,79 @@ fun ProductsDetailsScreen(
 ) {
 
     val tabItems = listOf(
-        TabItems.Details(),
         TabItems.Shop(),
+        TabItems.Details(),
         TabItems.Features()
     )
     var selectedTabItem by remember { mutableStateOf(0) }
 
     val phoneDetailedData = productsDetailsViewModel.phoneDetailedData.collectAsState()
 
-    val productProperties by remember(phoneDetailedData) {
+    LaunchedEffect(key1 = Unit) {
+        productsDetailsViewModel.requestData()
+    }
+
+    val productProperties by remember(phoneDetailedData.value) {
         mutableStateOf(
-            if (phoneDetailedData.value == null) emptyList()
-            else listOf(
+            listOf(
                 PropertyItem(
-                    propertyTitle = phoneDetailedData.value?.cPU ?: "",
+                    propertyTitle = phoneDetailedData.value.cPU,
                     propertyIcon = Icons.Outlined.Memory
                 ),
                 PropertyItem(
-                    propertyTitle = phoneDetailedData.value?.camera ?: "",
+                    propertyTitle = phoneDetailedData.value.camera,
                     propertyIcon = Icons.Outlined.PhotoCamera
                 ),
                 PropertyItem(
-                    propertyTitle = phoneDetailedData.value?.ssd ?: "",
+                    propertyTitle = phoneDetailedData.value.ssd,
                     propertyIcon = Icons.Outlined.Storage
                 ),
                 PropertyItem(
-                    propertyTitle = phoneDetailedData.value?.sd ?: "",
+                    propertyTitle = phoneDetailedData.value.sd,
                     propertyIcon = Icons.Outlined.SdStorage
                 )
             )
         )
     }
+
+    var selectedColor by remember {
+        mutableStateOf(0)
+    }
+
+    var selectedMemory by remember {
+        mutableStateOf(0)
+    }
+
+
+    val colorsList by remember(phoneDetailedData.value, selectedColor) {
+        mutableStateOf(
+            phoneDetailedData.value.color.mapIndexed { ind, value ->
+                ColorItem(
+                    selectedColor == ind,
+                    Color(value.toColorInt())
+                )
+            }
+
+        )
+    }
+
+    val memoryList by remember(phoneDetailedData.value, selectedMemory) {
+        mutableStateOf(
+            phoneDetailedData.value.capacity.mapIndexed { ind, value ->
+                MemoryItem(
+                    selectedMemory == ind,
+                    value
+                )
+            }
+
+        )
+    }
+
+
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .verticalScroll(rememberScrollState())
             .background(AppResources.colors.BackgroundWhite)
     ) {
         Row(
@@ -113,12 +159,17 @@ fun ProductsDetailsScreen(
             )
         }
 
-        val photos = phoneDetailedData.value?.images ?: emptyList()
-        HorizontalPager(count = photos.size) { currentImage ->
+        val photos = phoneDetailedData.value.images
+        HorizontalPager(
+            count = photos.size,
+            itemSpacing = 24.dp,
+            verticalAlignment = Alignment.CenterVertically,
+        ) { currentImage ->
             Image(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .height(350.dp),
+                    .fillMaxWidth(0.7f)
+                    .height(350.dp)
+                    .shadow(3.dp, shape = RoundedCornerShape(12.dp)),
                 painter = rememberAsyncImagePainter(
                     model = ImageRequest.Builder(LocalContext.current)
                         .data(photos[currentImage])
@@ -126,27 +177,25 @@ fun ProductsDetailsScreen(
                     placeholder = ColorPainter(AppResources.colors.GreyLight),
                 ),
                 contentDescription = null,
-                contentScale = ContentScale.Crop,
+                contentScale = ContentScale.FillHeight,
             )
         }
         Surface(
             modifier = Modifier
                 .padding(top = 20.dp)
                 .fillMaxSize()
-                .verticalScroll(rememberScrollState()),
+                .shadow(4.dp, shape = RoundedCornerShape(topStart = 30.dp, topEnd = 30.dp)),
             color = AppResources.colors.White,
-            shape = RoundedCornerShape(topStart = 30.dp, topEnd = 30.dp)
         ) {
-            Column(modifier = Modifier.padding(horizontal = 30.dp)) {
+            Column(modifier = Modifier.padding(start = 30.dp, end = 30.dp, top = 24.dp)) {
                 Row(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 37.dp, vertical = 24.dp),
+                        .fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Column() {
                         Text(
-                            text = phoneDetailedData.value?.title ?: "",
+                            text = phoneDetailedData.value.title,
                             style = AppResources.typography.medium.sp24.copy(
                                 color = AppResources.colors.Blue
                             )
@@ -156,7 +205,7 @@ fun ProductsDetailsScreen(
                             starWidth = 18.dp,
                             starHeight = 18.dp,
                             endPadding = 8.dp,
-                            rating = phoneDetailedData.value?.rating ?: 0f
+                            rating = phoneDetailedData.value.rating
                         )
                     }
                     CustomButton(
@@ -168,7 +217,7 @@ fun ProductsDetailsScreen(
                     )
                 }
                 TabRow(
-                    modifier = Modifier.padding(horizontal = 24.dp),
+                    modifier = Modifier.padding(top = 24.dp),
                     selectedTabIndex = selectedTabItem,
                     backgroundColor = AppResources.colors.White,
                     indicator = {
@@ -194,26 +243,47 @@ fun ProductsDetailsScreen(
                     }
 
                 }
-                FlowRow() {
+                FlowRow(
+                    modifier = Modifier.padding(top = 18.dp)
+                ) {
                     //тут плохой вариант реализации бэкенда и api
                     productProperties.forEach { propertyItem ->
                         PropertyItemUi(propertyItem = propertyItem)
                     }
                 }
                 Text(
-                    modifier = Modifier.padding(top = 24.dp),
+                    modifier = Modifier.padding(top = 12.dp, start = 12.dp, bottom = 12.dp),
                     text = stringResource(id = R.string.select_color_and_capacity),
                     style = AppResources.typography.medium.sp15.copy(color = AppResources.colors.Blue)
                 )
 
-                FlowRow() {
-
+                FlowRow(
+                    modifier = Modifier.padding(bottom = 12.dp)
+                ) {
+                    colorsList.forEachIndexed { index, colorItem ->
+                        ColorItemUi(
+                            modifier = Modifier.padding(start = 12.dp, end = 12.dp),
+                            colorItem = colorItem,
+                            onColorSelected = {
+                                selectedColor = index
+                            }
+                        )
+                    }
+                    memoryList.forEachIndexed { index, memoryItem ->
+                        MemoryItemUi(
+                            modifier = Modifier.padding(start = 12.dp),
+                            memoryItem = memoryItem,
+                            onMemoryItemSelected = {
+                                selectedMemory = index
+                            }
+                        )
+                    }
                 }
 
                 CustomButton(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(vertical = 24.dp),
+                        .padding(top = 12.dp, bottom = 24.dp),
                     onClick = { },
                     buttonStyle = ButtonStyles.FullCustomButton(
                         buttonBackgroundColors = ButtonBackgroundColors.Orange,
@@ -230,7 +300,7 @@ fun ProductsDetailsScreen(
                                 )
                             )
                             Text(
-                                text = "$${phoneDetailedData.value?.price ?: 0}",
+                                text = "$${phoneDetailedData.value.price}",
                                 style = AppResources.typography.bold.sp20.copy(
                                     color = AppResources.colors.White
                                 )
