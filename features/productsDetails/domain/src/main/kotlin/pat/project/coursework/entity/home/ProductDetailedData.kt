@@ -1,6 +1,6 @@
 package pat.project.coursework.entity.home
 
-data class PhoneDetailedData (
+data class ProductDetailedData (
     val cPU: String,
     val camera: String,
     val capacity: List<String>,

@@ -24,11 +24,13 @@ class ProductsDetailsEntryImpl @Inject constructor() : ProductsDetailsEntry() {
         val context = LocalContext.current
         val viewModel = injectedViewModel {
             DaggerProductsDetailsComponent.builder()
-//                .productsDetailsDeps((context as Activity).findDependencies())
+                .productsDetailsDeps((context as Activity).findDependencies())
                 .build()
                 .productsDetailsViewModel
         }
 
-        ProductsDetailsScreen(productsDetailsViewModel = viewModel)
+        ProductsDetailsScreen(
+            productsDetailsViewModel = viewModel,
+            navigateBack = {navController.popBackStack()})
     }
 }

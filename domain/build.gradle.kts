@@ -16,5 +16,7 @@ dependencies {
     implementation(Dependencies.Core.Ktx.lib)
     implementation(project(":common:domain"))
     api(project(":features:home:domain"))
+    api(project(":features:cart:domain"))
+    api(project(":features:productsDetails:domain"))
 
 }

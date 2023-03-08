@@ -41,7 +41,8 @@ import pat.project.coursework.productsdetailes.ui.tabrow.TabItems
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun ProductsDetailsScreen(
-    productsDetailsViewModel: ProductsDetailsViewModel
+    productsDetailsViewModel: ProductsDetailsViewModel,
+    navigateBack: () -> Unit
 ) {
 
     val tabItems = listOf(
@@ -89,8 +90,10 @@ fun ProductsDetailsScreen(
             verticalAlignment = Alignment.CenterVertically
         ) {
             CustomButton(
-                onClick = {}, buttonStyle =
-                ButtonStyles.CustomIconButton(
+                onClick = {
+                    navigateBack()
+                },
+                buttonStyle = ButtonStyles.CustomIconButton(
                     buttonBackgroundColors = ButtonBackgroundColors.BLUE,
                     buttonIcon = Icons.Outlined.ArrowBackIos
                 )

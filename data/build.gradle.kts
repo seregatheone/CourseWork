@@ -21,5 +21,7 @@ dependencies {
     api(project(":backend:coursework"))
     implementation(project(":common:domain"))
     implementation(project(":features:home:domain"))
+    implementation(project(":features:cart:domain"))
+    implementation(project(":features:productsDetails:domain"))
 
 }

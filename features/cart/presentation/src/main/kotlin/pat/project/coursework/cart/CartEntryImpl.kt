@@ -23,7 +23,7 @@ class CartEntryImpl @Inject constructor() : CartEntry() {
         val context = LocalContext.current
         val viewModel = injectedViewModel {
             DaggerCartComponent.builder()
-//                .cartDeps((context as Activity).findDependencies())
+                .cartDeps((context as Activity).findDependencies())
                 .build()
                 .cartViewModel
         }

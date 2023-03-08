@@ -1,6 +1,5 @@
-package pat.project.coursework.data.mappers.addresses
+package pat.project.coursework.data.mappers
 
-import com.google.gson.annotations.SerializedName
 import pat.project.coursework.entity.home.BestSellerDataModel
 import pat.project.coursework.entity.home.HomeDomainData
 import pat.project.coursework.entity.home.HotSalesDataModel
