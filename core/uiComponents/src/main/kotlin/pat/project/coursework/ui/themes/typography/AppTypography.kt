@@ -69,6 +69,16 @@ fun appTypography(dims: AppDimens): AppTypography = AppTypography(
             fontWeight = FontWeight.W500,
             fontSize = dims.textSizes.textSize18
         ),
+        sp20 = TextStyle(
+            fontFamily = AppFontFamilies.MarkPro,
+            fontWeight = FontWeight.W500,
+            fontSize = dims.textSizes.textSize20
+        ),
+        sp24 = TextStyle(
+            fontFamily = AppFontFamilies.MarkPro,
+            fontWeight = FontWeight.W500,
+            fontSize = dims.textSizes.textSize24
+        ),
     ),
 
     regular = Regular(

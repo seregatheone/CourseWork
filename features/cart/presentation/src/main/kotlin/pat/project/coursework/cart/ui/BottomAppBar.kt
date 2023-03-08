@@ -33,7 +33,8 @@ fun BottomCartAppBar() = BottomAppBar(
                 buttonBackgroundColors = ButtonBackgroundColors.Orange,
                 paddingValues = PaddingValues(horizontal = 120.dp, vertical = 14.dp),
                 buttonText = stringResource(id = R.string.checkout),
-                buttonTextStyle = AppResources.typography.bold.sp20
+                buttonTextStyle = AppResources.typography.bold.sp20,
+                textColor = AppResources.colors.White
             )
         )
 

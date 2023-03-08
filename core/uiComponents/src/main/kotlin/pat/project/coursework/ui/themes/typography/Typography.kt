@@ -27,6 +27,8 @@ data class Medium(
     val sp12 : TextStyle,
     val sp15 : TextStyle,
     val sp18 : TextStyle,
+    val sp20 : TextStyle,
+    val sp24 : TextStyle,
 )
 
 data class Regular(

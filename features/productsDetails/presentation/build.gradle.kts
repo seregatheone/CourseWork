@@ -28,6 +28,9 @@ dependencies {
 
     implementation(Dependencies.Accompanist.navigationAnimation)
 
+    implementation(Dependencies.Accompanist.pager)
+    implementation(Dependencies.Accompanist.flowRow)
+
     implementation(Dependencies.Coil.lib)
 
     implementation(Dependencies.Core.Ktx.lib)

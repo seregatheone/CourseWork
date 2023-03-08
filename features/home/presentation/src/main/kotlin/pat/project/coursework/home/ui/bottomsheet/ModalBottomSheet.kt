@@ -55,7 +55,8 @@ fun ModalBottomSheet(
                     buttonBackgroundColors = ButtonBackgroundColors.Orange,
                     buttonTextStyle = AppResources.typography.medium.sp18,
                     buttonText = stringResource(id = R.string.filter_done),
-                    paddingValues = PaddingValues(vertical = 7.dp, horizontal = 16.dp)
+                    paddingValues = PaddingValues(vertical = 7.dp, horizontal = 16.dp),
+                    textColor = AppResources.colors.White
                 ),
             )
         }
