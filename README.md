@@ -19,4 +19,4 @@ Course work for university from test task
 #### figma design https://www.figma.com/file/tHVS9DiTzihPr8FepbR38N/Ecom-design?node-id=0%3A1&t=YVLpFuBvzn97W5MJ-1
 #### text requirements https://docs.google.com/document/d/19Cg1klKwpTRahF_CEPYJySpyu91V_wUvN5fmWsRn5IA/edit?usp=sharing  
 
-![current gif](https://github.com/seregatheone/CourseWork/blob/master/gif/demonstration.gif)
+<img src="/gif/demonstration.gif" width="200" height="400"/>
