@@ -9,7 +9,6 @@ Course work for university from test task
 - Dependency Injection: `Dagger2`  
 - UI Framework: `Jetpack Compose`  
 - Network: `Retrofit`  
-- Cache: `SharedPreference`  
 - UI: `Material Design 3` + basic compose instruments  
 - Architecture: `Clean Architecture`  
 - Pattern Presentation: `MVVM`, `MVVM+` (MVVM mixed with MVI)  
