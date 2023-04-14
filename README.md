@@ -16,8 +16,10 @@ Course work for university from test task
 - Builder Project: `Gradle KTS`  
 
 
-#### figma design https://www.figma.com/file/tHVS9DiTzihPr8FepbR38N/Ecom-design?node-id=0%3A1&t=YVLpFuBvzn97W5MJ-1
-#### text requirements https://docs.google.com/document/d/19Cg1klKwpTRahF_CEPYJySpyu91V_wUvN5fmWsRn5IA/edit?usp=sharing  
+#### figma design `https://www.figma.com/file/tHVS9DiTzihPr8FepbR38N/Ecom-design?node-id=0%3A1&t=YVLpFuBvzn97W5MJ-1`
+#### text requirements `https://docs.google.com/document/d/19Cg1klKwpTRahF_CEPYJySpyu91V_wUvN5fmWsRn5IA/edit?usp=sharing`  
+
+### Course work text work `https://disk.yandex.ru/i/ea4-fnNivcB_yQ`
 
 <img src="/gif/splashScreen.gif" width="200" height="400"/> <img src="/gif/homeScreen.gif" width="200" height="400"/>  
 <img src="/gif/productDetails.gif" width="200" height="400"/> <img src="/images/cartScreen.png" width="200" height="400"/>
