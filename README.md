@@ -1,6 +1,6 @@
 # CourseWork
 Course work for university from test task   
-### Course work text file `https://disk.yandex.ru/i/ea4-fnNivcB_yQ`  
+### Course work file `https://disk.yandex.ru/i/ea4-fnNivcB_yQ`  
 
 
 - Название веток feature/CW-XXX  
